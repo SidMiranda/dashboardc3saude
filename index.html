@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - C3 Saúde Ocupacional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="login-body">
+    <div class="login-container glass-panel">
+        <div class="login-header">
+            <img src="img/logo.png" alt="C3 Saúde" class="login-logo">
+            <h1>C3 Saúde Ocupacional</h1>
+            <p>Acesso ao Sistema Estratégico</p>
+        </div>
+        <form id="loginForm" class="login-form">
+            <div class="input-group">
+                <label for="username">Usuário</label>
+                <input type="text" id="username" name="username" required autocomplete="off">
+            </div>
+            <div class="input-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div id="loginError" class="error-message hidden">Credenciais inválidas.</div>
+            <button type="submit" class="btn-primary">Entrar</button>
+        </form>
+    </div>
+    <script src="js/auth.js"></script>
+</body>
+</html>

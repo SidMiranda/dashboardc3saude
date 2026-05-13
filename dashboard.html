@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Estratégico - C3 Saúde Ocupacional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+</head>
+<body class="dashboard-body">
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay glass-panel">
+        <div class="spinner"></div>
+        <h2>Sincronizando Atestados...</h2>
+        <p style="color: var(--color-text-muted); font-size: 0.9rem;">Buscando os dados mais recentes da planilha</p>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar glass-panel" id="sidebar">
+        <div class="sidebar-header">
+            <img src="img/logo.png" alt="C3 Saúde" class="sidebar-logo">
+            <button id="toggleSidebar" class="btn-icon">☰</button>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active">Dashboard</a>
+            <a href="#" class="nav-item">Relatórios</a>
+            <a href="#" class="nav-item">Configurações</a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="top-header glass-panel">
+            <div class="header-title">
+                <button id="mobileMenuBtn" class="btn-icon mobile-only">☰</button>
+                <img src="img/logo.png" alt="C3 Saúde" class="mobile-logo mobile-only">
+                <h1>Dashboard Atestados Shopee</h1>
+            </div>
+            <button id="logoutBtn" class="btn-secondary">Sair</button>
+        </header>
+
+        <div class="content-wrapper">
+            <!-- KPIs -->
+            <section class="kpi-grid">
+                <div class="kpi-card glass-panel">
+                    <h3>Total de Atestados</h3>
+                    <p id="kpiTotal" class="kpi-value">0</p>
+                </div>
+                <div class="kpi-card glass-panel">
+                    <h3>Lançados</h3>
+                    <p id="kpiLancados" class="kpi-value">0</p>
+                </div>
+                <div class="kpi-card glass-panel">
+                    <h3>CIDs Distintos</h3>
+                    <p id="kpiCids" class="kpi-value">0</p>
+                </div>
+                <div class="kpi-card glass-panel">
+                    <h3>Colaboradores (Únicos)</h3>
+                    <p id="kpiColabs" class="kpi-value">0</p>
+                </div>
+            </section>
+
+            <!-- Charts -->
+            <section class="charts-grid">
+                <div class="chart-card glass-panel">
+                    <h2>Volume de Atestados: Timeline de Abril</h2>
+                    <div id="timelineChart"></div>
+                </div>
+                <div class="chart-card glass-panel">
+                    <h2>Top 10 CIDs</h2>
+                    <div id="cidChart"></div>
+                </div>
+            </section>
+
+            <!-- Table -->
+            <section class="table-section glass-panel">
+                <h2>Top 10 Colaboradores: Maior Tempo Afastado</h2>
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Posição</th>
+                                <th>Colaborador</th>
+                                <th>Tempo Total (Dias)</th>
+                                <th>Qtd de Atestados</th>
+                                <th>Indicador Visual</th>
+                            </tr>
+                        </thead>
+                        <tbody id="topColabsTableBody">
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
