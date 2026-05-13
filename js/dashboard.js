@@ -201,7 +201,7 @@ function processDataAndRender(payload) {
         stroke: { curve: 'smooth', width: 3 },
         xaxis: {
             categories: timelineCategories,
-            title: { text: 'Dias (Abril)', style: { color: '#a0a09e' } }
+            title: { text: 'Dias', style: { color: '#a0a09e' } }
         },
         yaxis: {
             title: { text: 'Qtd Atestados', style: { color: '#a0a09e' } },
